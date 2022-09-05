@@ -18,35 +18,35 @@
 #define rotate_cw_ccw_pwm 0      // optional - PWM on CW and CCW output - set to 0 to disable (must be PWM capable pin)
 #define rotate_cw_freq 0         // optional - CW variable frequency output
 #define rotate_ccw_freq 0        // optional - CCW variable frequency output
-#define button_cw 0              // normally open button to ground for manual CW rotation (schematic pin: A2)
-#define button_ccw 0             // normally open button to ground for manual CCW rotation (schematic pin: A3)
+#define button_cw A5             // normally open button to ground for manual CW rotation (schematic pin: A2)
+#define button_ccw A4            // normally open button to ground for manual CCW rotation (schematic pin: A3)
 #define serial_led 0             // LED blinks when command is received on serial port (set to 0 to disable)
-#define rotator_analog_az A0     // reads analog azimuth voltage from rotator - pin 4 on Yaesu connector
+#define rotator_analog_az A7     // reads analog azimuth voltage from rotator - pin 4 on Yaesu connector
 #define azimuth_speed_voltage 0  // optional - PWM output for speed control voltage feed into rotator (on continually unlike rotate_cw_pwm and rotate_ccw_pwm)
 #define overlap_led 0            // line goes active when azimuth rotator is in overlap (> 360 rotators)
-#define brake_az 0               // goes high to disengage azimuth brake (set to 0 to disable)
+#define brake_az 8               // goes high to disengage azimuth brake (set to 0 to disable)
 #define az_speed_pot 0           // connect to wiper of 1K to 10K potentiometer for speed control (set to 0 to disable)
 #define az_preset_pot 0          // connect to wiper of 1K to 10K potentiometer for preset control (set to 0 to disable)
-#define preset_start_button 0    // connect to momentary switch (ground on button press) for preset start (set to 0 to disable or for preset automatic start)
+#define preset_start_button A3    // connect to momentary switch (ground on button press) for preset start (set to 0 to disable or for preset automatic start)
 #define button_stop 0            // connect to momentary switch (ground on button press) for preset stop (set to 0 to disable or for preset automatic start)
 #define rotation_indication_pin 0
 #define blink_led 0
-#define az_stepper_motor_pulse 44 //0
+#define az_stepper_motor_pulse 0
 #define az_stepper_motor_direction 0
 
 
 
 /*----------- elevation pins --------------*/
 #ifdef FEATURE_ELEVATION_CONTROL
-  #define rotate_up 8               // goes high to activate rotator elevation up
-  #define rotate_down 9             // goes high to activate rotator elevation down
+  #define rotate_up 0               // goes high to activate rotator elevation up
+  #define rotate_down 0             // goes high to activate rotator elevation down
   #define rotate_up_or_down 0       // goes high when elevation up or down is activated
   #define rotate_up_pwm 0           // optional - PWM UP output - set to 0 to disable (must be PWM capable pin)
   #define rotate_down_pwm 0         // optional - PWM DOWN output - set to 0 to disable (must be PWM capable pin)
   #define rotate_up_down_pwm 0      // optional - PWM on both UP and DOWN (must be PWM capable pin)
   #define rotate_up_freq 0          // optional - UP variable frequency output
   #define rotate_down_freq 0        // optional - UP variable frequency output
-  #define rotator_analog_el A1      // reads analog elevation voltage from rotator
+  #define rotator_analog_el 0      // reads analog elevation voltage from rotator
   #define button_up 0               // normally open button to ground for manual up elevation
   #define button_down 0             // normally open button to ground for manual down rotation
   #define brake_el 0                // goes high to disengage elevation brake (set to 0 to disable)
@@ -56,8 +56,8 @@
 
 // rotary encoder pins and options
 #ifdef FEATURE_AZ_PRESET_ENCODER 
-  #define az_rotary_preset_pin1 0                     // CW Encoder Pin
-  #define az_rotary_preset_pin2 0                     // CCW Encoder Pin
+  #define az_rotary_preset_pin1 10                     // CW Encoder Pin
+  #define az_rotary_preset_pin2 9                     // CCW Encoder Pin
 #endif //FEATURE_AZ_PRESET_ENCODER
 
 #ifdef FEATURE_EL_PRESET_ENCODER 
@@ -99,8 +99,8 @@
 
 
 #ifdef FEATURE_JOYSTICK_CONTROL
-  #define pin_joystick_x A0
-  #define pin_joystick_y A1
+  #define pin_joystick_x 0
+  #define pin_joystick_y 0
 #endif //FEATURE_JOYSTICK_CONTROL
 
 #ifdef FEATURE_AZ_POSITION_HH12_AS5045_SSI
